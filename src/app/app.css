@@ -2,11 +2,6 @@
 	min-width: 420px;
 }
 
-.button.draw {
-	float: left;
-	width: 96%;
-}
-
 .card-in-hand {
 	background-color: #4D4700;
 	height: 200px;
@@ -17,12 +12,9 @@
 	background-color: #817700
 }
 
-.clearfix {
-	clear: left;
-}
-
 .life-bar {
-	display: inline-block;
+	float: right;
+	margin-left: -10px;
 	background-color: green;
 	width: 10px;
 	height: 46px;
