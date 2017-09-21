@@ -4,7 +4,8 @@ import Deck from "./../classes/Deck";
 
 @Component({
 	selector: "application",
-	templateUrl: "./app.html"
+	templateUrl: "./app.html",
+	styleUrls: ['./app.css']
 })
 export class AppComponent {
 	private _deck:Deck;
