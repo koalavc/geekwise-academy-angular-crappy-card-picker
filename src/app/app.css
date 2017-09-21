@@ -3,14 +3,14 @@
 }
 
 .card-in-hand {
-	background-color: #4D4700;
+	background-color: #FF6138;
 	height: 200px;
 	padding: 50px;
 	width: 172px;
 }
 
 .card-in-hand:hover {
-	background-color: #817700
+	background-color: #79BD8F;
 }
 
 .life-bar {
