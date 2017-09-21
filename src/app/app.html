@@ -12,9 +12,15 @@
 		</p>
 	</div>
 
-	<div class="ui orange inverted left floated compact segment"
+	<div class="ui left floated compact segment card-in-hand"
 	     *ngFor="let card of myHand"
 	     (click)="returnCard(card)">
-		<button class="ui large button">{{ card.rank }} of {{ card.suit }}</button>
+		<button class="ui large button">
+			<h2>{{ card.rank }} of {{ card.suit }}</h2>
+			<span>
+				RETURN
+				<i class="reply icon"></i>
+			</span>
+		</button>
 	</div>
 </div>
