@@ -1,8 +1,41 @@
+.main {
+	min-width: 420px;
+}
+
+.button.draw {
+	float: left;
+	width: 96%;
+}
+
 .card-in-hand {
 	background-color: #4D4700;
 	height: 200px;
+	width: 138px;
 }
 
 .card-in-hand:hover {
 	background-color: #817700
+}
+
+.clearfix {
+	clear: left;
+}
+
+.life-bar {
+	display: inline-block;
+	background-color: green;
+	width: 10px;
+	height: 46px;
+}
+
+.life-bar.sad {
+	background-color: red;
+}
+
+.return {
+	display: inline-block;
+	font-size: small;
+	color: gray;
+	text-align: center;
+	width: 100%;
 }

@@ -1,15 +1,20 @@
-<div class="ui container">
+<div class="ui container main">
 	<h1>Card Pick-a-matic</h1>
 
 	<div class="ui segment">
-		<button class="ui big fluid button"
+		<button class="ui big fluid button draw"
 		        (click)="drawCard()"
 		        [disabled]="!getDeckCardCount()">
 			Pick a card!  {{ getDeckCardCount() }} left.
 		</button>
-		<p>
-			You last drew: {{ getLastPickedCardLabel() || "n/a" }}
-		</p>
+
+		<span class="life-bar"
+		      [ngClass]="lifeBarHeight() < 20 ? 'sad' : ''"
+		      [ngStyle]="{ height: lifeBarHeight() + 'px' }"></span>
+
+		<div class="clearfix"></div>
+
+		<p>You last drew: {{ getLastPickedCardLabel() || "n/a" }}</p>
 	</div>
 
 	<div class="ui left floated compact segment card-in-hand"
@@ -17,7 +22,7 @@
 		<button class="ui large button"
 		        (click)="returnCard(card)">
 			<h2>{{ card.rank }} of {{ card.suit }}</h2>
-			<span>
+			<span class="return">
 				RETURN
 				<i class="reply icon"></i>
 			</span>
