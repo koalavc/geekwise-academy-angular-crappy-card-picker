@@ -5,7 +5,8 @@
 .card-in-hand {
 	background-color: #4D4700;
 	height: 200px;
-	width: 138px;
+	padding: 50px;
+	width: 172px;
 }
 
 .card-in-hand:hover {
@@ -13,8 +14,6 @@
 }
 
 .life-bar {
-	float: right;
-	margin-left: -10px;
 	background-color: green;
 	width: 10px;
 	height: 46px;
