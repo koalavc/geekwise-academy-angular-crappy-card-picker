@@ -1,14 +1,19 @@
 <div class="ui container">
-	<button class="ui large inverted orange button"
-	        (click)="invokeCardPicker()"
-	        [disabled]="cardsRemaining() === 0">
-		Pick a crappy card!  {{ cardsRemaining() }} remain.
-	</button>
+	<h1>Card Pick-a-matic</h1>
 
-	<div class="ui segment">You last drew: {{ getLastPickedCardLabel() || "n/a" }}</div>
+	<div class="ui segment">
+		<button class="ui big fluid button"
+		        (click)="drawCard()">
+			Pick a card!
+		</button>
+		<p>
+			You last drew: {{ getLastPickedCardLabel() || "n/a" }}
+		</p>
+	</div>
 
-	<div class="ui orange inverted segment"
-	     *ngFor="let card of pickedCards">
-		{{ card.rank }} of {{ card.suit }}
+	<div class="ui orange inverted left floated compact segment"
+	     *ngFor="let card of myHand"
+	     (click)="returnCard(card)">
+		<button class="ui large button">{{ card.rank }} of {{ card.suit }}</button>
 	</div>
 </div>
