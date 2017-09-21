@@ -13,9 +13,9 @@
 	</div>
 
 	<div class="ui left floated compact segment card-in-hand"
-	     *ngFor="let card of myHand"
-	     (click)="returnCard(card)">
-		<button class="ui large button">
+	     *ngFor="let card of myHand">
+		<button class="ui large button"
+		        (click)="returnCard(card)">
 			<h2>{{ card.rank }} of {{ card.suit }}</h2>
 			<span>
 				RETURN
