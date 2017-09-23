@@ -1,0 +1,16 @@
+button span {
+	display: inline-block;
+	font-size: small;
+	color: gray;
+	text-align: center;
+	width: 100%;
+}
+
+.card-in-hand {
+	background-color: #4D4700;
+	height: 200px;
+}
+
+.card-in-hand:hover {
+	background-color: #817700
+}
