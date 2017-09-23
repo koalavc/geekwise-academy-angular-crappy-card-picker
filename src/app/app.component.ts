@@ -23,6 +23,10 @@ export class AppComponent {
 		this.myHand.unshift(this._deck.drawCard());
 	}
 
+	getDeckCardCount() {
+		return this._deck.getCardCount();
+	}
+
 	returnCard(card) {
 		this._deck.returnCardToDeck(card);
 		this.myHand.splice(this.myHand.indexOf(card), 1);

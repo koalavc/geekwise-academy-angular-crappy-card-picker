@@ -39,6 +39,10 @@ export default class Deck {
 		return card;
 	}
 
+	public getCardCount() {
+		return this._cards.length;
+	}
+
 	public returnCardToDeck(card:ICard) {
 		this._cards.push(card);
 		this._consoleCardCount();

@@ -3,8 +3,9 @@
 
 	<div class="ui segment">
 		<button class="ui big fluid button"
-		        (click)="drawCard()">
-			Pick a card!
+		        (click)="drawCard()"
+		        [disabled]="!getDeckCardCount()">
+			Pick a card!  {{ getDeckCardCount() }} left.
 		</button>
 		<p>
 			You last drew: {{ getLastPickedCardLabel() || "n/a" }}
