@@ -28,6 +28,12 @@ export class AppComponent {
 		return this._deck.getCardCount();
 	}
 
+	lifeBarHeight() {
+		const baseHeight = 46;
+
+		return this._deck.getCardCount() / this._deck.getMaxCardCount() * baseHeight;
+	}
+
 	returnCard(card) {
 		this._deck.returnCardToDeck(card);
 		this.myHand.splice(this.myHand.indexOf(card), 1);

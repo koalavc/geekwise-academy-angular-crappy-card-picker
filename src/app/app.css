@@ -1,16 +1,32 @@
-button span {
+.main {
+	min-width: 420px;
+}
+
+.card-in-hand {
+	background-color: #FF6138;
+	height: 200px;
+	padding: 50px;
+	width: 172px;
+}
+
+.card-in-hand:hover {
+	background-color: #79BD8F;
+}
+
+.life-bar {
+	background-color: green;
+	width: 10px;
+	height: 46px;
+}
+
+.life-bar.sad {
+	background-color: red;
+}
+
+.return {
 	display: inline-block;
 	font-size: small;
 	color: gray;
 	text-align: center;
 	width: 100%;
-}
-
-.card-in-hand {
-	background-color: #4D4700;
-	height: 200px;
-}
-
-.card-in-hand:hover {
-	background-color: #817700
 }

@@ -1,23 +1,34 @@
-<div class="ui container">
+<div class="ui container main">
 	<h1>Card Pick-a-matic</h1>
 
 	<div class="ui segment">
-		<button class="ui big fluid button"
-		        (click)="drawCard()"
-		        [disabled]="!getDeckCardCount()">
-			Pick a card!  {{ getDeckCardCount() }} left.
-		</button>
-		<p>
-			You last drew: {{ getLastPickedCardLabel() || "n/a" }}
-		</p>
+		<div class="ui grid">
+			<div class="two column row">
+				<div class="middle aligned column">
+					<button class="ui big fluid button"
+					        (click)="drawCard()"
+					        [disabled]="!getDeckCardCount()">
+						Pick a card!  {{ getDeckCardCount() }} left.
+					</button>
+				</div>
+				<div class="one wide bottom aligned column">
+					<div class="life-bar"
+					     [ngClass]="lifeBarHeight() < 20 ? 'sad' : ''"
+					     [ngStyle]="{ height: lifeBarHeight() + 'px' }"></div>
+				</div>
+				<div class="four wide middle aligned column">
+						You last drew: {{ getLastPickedCardLabel() || "n/a" }}
+				</div>
+			</div>
+		</div>
 	</div>
 
-	<div class="ui left floated compact segment card-in-hand"
+	<div class="ui left floated compact center aligned segment card-in-hand"
 	     *ngFor="let card of myHand">
 		<button class="ui large button"
 		        (click)="returnCard(card)">
 			<h2>{{ card.rank }} of {{ card.suit }}</h2>
-			<span>
+			<span class="return">
 				RETURN
 				<i class="reply icon"></i>
 			</span>
