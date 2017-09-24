@@ -4,7 +4,7 @@ export default class Deck {
 	private _maxCardsInDeck:number = 52;
 	private _cards:ICard[];
 	private _cardRanks: Array<string> = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
-	private _cardSuits: Array<string> = ["♡", "♤", "♧", "♢"];;
+	private _cardSuits: Array<string> = ["♡", "♤", "♧", "♢"];
 
 	private _buildCards() {
 		this._cardRanks.forEach(rank => {
