@@ -8,8 +8,6 @@ export default class Deck {
 
 	private _buildCards() {
 		this._cardRanks.forEach(rank => {
-			const newCard = {};
-
 			this._cardSuits.forEach(suit => {
 				this._cards.push({
 					rank,
