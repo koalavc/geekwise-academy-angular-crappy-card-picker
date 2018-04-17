@@ -10,5 +10,10 @@
 }
 
 .main {
-	margin-top: 2em;
+	margin-bottom: 3em;
+	margin-top: 3em;
+}
+
+.clear {
+	clear: left;
 }
