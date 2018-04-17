@@ -1,0 +1,14 @@
+.card-environment {
+	float: left;
+	width: 60%;
+}
+
+.instruction {
+	float: left;
+	width: 40%;
+	padding-right: 2em;
+}
+
+.main {
+	margin-top: 2em;
+}

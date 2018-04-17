@@ -1,31 +1,73 @@
 <div class="ui container main">
-	<h1>Card Pick-a-matic</h1>
+	<div class="instruction">
+		<h1>Card Pick-a-matic</h1>
+		<p>You just pick cards and put them back.  So fun it doesn't need to be a game.  Tell your friends.</p>
 
-	<div class="ui segment">
-		<div class="ui grid">
-			<div class="two column row">
-				<div class="middle aligned column">
-					<button class="ui big fluid button">
-						Pick a card!
-					</button>
-				</div>
-				<div class="one wide bottom aligned column">
-					<div class="life-bar"></div>
-				</div>
-				<div class="four wide middle aligned column">
-						You last drew: n/a
+		<h3>Step 1</h3>
+		<p>
+			The &quot;Pick a card!&quot; button should actually do a thing or two.  Have it <b>draw a card from a deck</b>!  To do this,
+			you will need to instantiate a Deck from the Deck class.  Don't do this on every click.  That'll be bad for reasons
+			you'll pretty much see for yourself soon.
+		</p>
+		<p>
+			The card drawn should <b>show somehwere</b>.
+		</p>
+
+		<h3>Step 2</h3>
+		<p>
+			Don't just draw and toss.  That's wreckless.  Let's <b>make a user's hand</b>.  Store the cards we draw from
+			the deck and show them using fancy Angular stuff.  Now's the time to shine.
+		</p>
+		<p>
+			Use the &lt;div&gt; with class &quot;card-in-hand&quot;.  Be one with your Angular structural directives.
+		</p>
+
+		<h3>Step 3</h3>
+		<p>
+			Each card should have a button that, when clicked, <b>sends the card back</b> into the deck from whence it came.
+		</p>
+
+		<h3>Step 4</h3>
+		<p>
+			Your deck <b>should have a life bar</b> so you don't accidentally kill it.  As you remove cards from the deck, present a
+			rectangle (bar) that shrinks and changes color to something dangerousy.  Make it look healthy again if cards are
+			returned to the deck.
+		</p>
+
+		<h3>Step 5</h3>
+		<p>
+			<b>Polish</b>. Disable the &quot;Pick a card!&quot; button when there's no more cards to draw. <b>Style your cards</b> and maybe the space they
+			chill.  Make them look good.  Add to your GitHub for more job-cred.
+		</p>
+	</div>
+
+	<div class="card-environment">
+		<div class="ui segment">
+			<div class="ui grid">
+				<div class="two column row">
+					<div class="middle aligned column">
+						<button class="ui big fluid button">
+							Pick a card!
+						</button>
+					</div>
+					<div class="one wide bottom aligned column">
+						<div class="life-bar"></div>
+					</div>
+					<div class="four wide middle aligned column">
+							You last drew: n/a
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="ui left floated compact center aligned segment card-in-hand">
-		<button class="ui large button">
-			<h2>card.rank of card.suit</h2>
-			<span class="return">
-				RETURN
-				<i class="reply icon"></i>
-			</span>
-		</button>
+		<div class="ui left floated compact center aligned segment card-in-hand">
+			<button class="ui large button">
+				<h2>card.rank of card.suit</h2>
+				<span class="return">
+					RETURN
+					<i class="reply icon"></i>
+				</span>
+			</button>
+		</div>
 	</div>
 </div>
