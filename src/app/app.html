@@ -46,23 +46,27 @@
 			<div class="ui grid">
 				<div class="row">
 					<div class="seven wide middle aligned column">
-						<button class="ui big fluid button">
+						<button
+							class="ui big fluid button"
+							(click)="getCard()">
 							Pick a card!
 						</button>
 					</div>
 					<div class="one wide bottom aligned column">
-						<div class="life-bar"></div>
+						<div class="life-bar" [(ngModel)]="lifeBar"></div>
 					</div>
 					<div class="seven wide middle aligned column">
-							You last drew: n/a
+							You last drew: {{ lastDrawnCard?.rank }}{{ lastDrawnCard?.suit }}
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="ui left floated compact center aligned segment card-in-hand">
-			<button class="ui large button">
-				<h2>card.rank of card.suit</h2>
+		<div
+			class="ui left floated compact center aligned segment card-in-hand"
+			*ngFor="let card of hand">
+			<button class="ui large button" (click)="returnCard(card)">
+				<h2>{{ card.rank }} of {{ card.suit }}</h2>
 				<span class="return">
 					RETURN
 					<i class="reply icon"></i>

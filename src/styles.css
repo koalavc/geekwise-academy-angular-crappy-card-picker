@@ -17,3 +17,10 @@
 .clear {
 	clear: left;
 }
+
+.life-bar {
+	border-radius: 3px;
+	background-color: green;
+	height: 10px;
+	width: 200px;
+}
