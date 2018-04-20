@@ -20,7 +20,21 @@
 
 .life-bar {
 	border-radius: 3px;
-	background-color: green;
-	height: 10px;
-	width: 200px;
+	width: 10px;
+}
+
+.card-picker-container {
+	height: 128px;
+}
+
+.winnerWinnerChickenDinner {
+	color: gold;
+}
+
+button.button.black, button.button.red {
+	height: 200px;
+}
+
+.card-in-hand {
+	height: inherit;
 }

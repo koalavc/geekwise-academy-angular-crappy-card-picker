@@ -44,33 +44,34 @@
 	<div class="card-environment">
 		<div class="ui segment">
 			<div class="ui grid">
-				<div class="row">
+				<div class="row card-picker-container">
 					<div class="seven wide middle aligned column">
 						<button
 							class="ui big fluid button"
-							(click)="getCard()">
-							Pick a card!
+							(click)="btnClick()"
+							[ngClass]="btnMsg == 'Pick a Card!' ? 'gray' : 'blue'">
+							{{ btnMsg }}
 						</button>
 					</div>
 					<div class="one wide bottom aligned column">
-						<div class="life-bar" [(ngModel)]="lifeBar"></div>
+						<div class="life-bar" [ngStyle]="{ 'height': lifebarHeight, 'backgroundColor': lifebarHealth }"></div>
 					</div>
 					<div class="seven wide middle aligned column">
-							You last drew: {{ lastDrawnCard?.rank }}{{ lastDrawnCard?.suit }}
+						You last drew: {{ lastDrawnCard?.rank }}{{ lastDrawnCard?.suit }}
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div
-			class="ui left floated compact center aligned segment card-in-hand"
-			*ngFor="let card of hand">
-			<button class="ui large button" (click)="returnCard(card)">
+		<h1 class="winnerWinnerChickenDinner" *ngIf="winnerWinnerChickenDinner">BLACKJACK!!!!!!!!!</h1>
+
+		<div class="ui left floated compact center aligned segment card-in-hand" *ngFor="let card of hand" >
+			<button class="ui large button" (click)="returnCard(card)" [ngClass]="card.suit == '♡' || card.suit == '♢' ? 'red' : 'black'" >
 				<h2>{{ card.rank }} of {{ card.suit }}</h2>
-				<span class="return">
+				<!-- <span class="return">
 					RETURN
 					<i class="reply icon"></i>
-				</span>
+				</span> -->
 			</button>
 		</div>
 	</div>
