@@ -45,6 +45,7 @@ export class AppComponent implements OnInit {
 		this.deck.returnCardToDeck(card);
 		this.lifebar();
 		this.blackjack();
+		this.hand.length === 52 ? this.btnMsg = 'Reset Deck' : this.btnMsg = 'Pick a Card!';
 	}
 
 	public lifebar() {
