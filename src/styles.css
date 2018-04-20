@@ -32,9 +32,11 @@
 }
 
 button.button.black, button.button.red {
-	height: 200px;
+	height: inherit;
+	width: inherit;
 }
 
 .card-in-hand {
-	height: inherit;
+	height: 250px;
+	width: 150px;
 }
