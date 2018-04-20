@@ -28,7 +28,11 @@
 }
 
 .winnerWinnerChickenDinner {
-	color: gold;
+	color: white;
+	text-align: center;
+	background-color: gold;
+	width: 100%;
+	border-radius: 5px;
 }
 
 button.button.black, button.button.red {
