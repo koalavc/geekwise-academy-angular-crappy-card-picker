@@ -24,31 +24,22 @@ export class AppComponent implements OnInit {
 		this.deck = new Deck();
 	}
 
+	// Button will pull a card if you have less than 52 cards in hand,
+	// or it will reset the deck if you have drawn all cards
 	public btnClick() {
 		this.hand.length === 51 ? this.btnMsg = 'Reset Deck' : this.btnMsg = 'Pick a Card!';
 		this.hand.length < 52 ? this.getCard() : this.resetDeck();
 	}
 
+	// Draws a card from the deck, updates lifebar and checks blackjack
 	public getCard() {
-		if(this.hand.length < 52) {
-			this.lastDrawnCard = this.deck.drawCard();
-			this.hand.push(this.lastDrawnCard);
-			this.lifebar();
-			this.blackjack();
-		} else {
-			return;
-		}
+		this.lastDrawnCard = this.deck.drawCard();
+		this.hand.push(this.lastDrawnCard);
+		this.lifebar();
+		this.blackjack();
 	}
 
-	public resetDeck() {
-		console.log('Reset the Deck');
-		this.hand.map(card => this.deck.returnCardToDeck(card));
-		this.hand = [];
-		this.lifebarHeight = '100px';
-		this.lifebarHealth = 'hsl(100, 100%, 50%)';
-		this.lastDrawnCard = { rank: '', suit: '' };
-	}
-
+	// Remove card from hand and return it to deck, update lifebar anc check blackjack
 	public returnCard(card) {
 		this.hand = this.hand.filter(elmnt => elmnt !== card);
 		this.deck.returnCardToDeck(card);
@@ -57,13 +48,25 @@ export class AppComponent implements OnInit {
 	}
 
 	public lifebar() {
-		// Change Height of Bar
+		// Calc the num of available cards out of 52 and move decimal over 2 places
 		const calc = ((52 - this.hand.length) / 52) * 100;
+		// Change Height of Bar
 		this.lifebarHeight = `${calc}px`;
 		// Change Color of Bar
 		this.lifebarHealth = `hsl(${calc}, 100%, 50%)`;
 	}
 
+	public resetDeck() {
+		// Return all cards from hand to deck
+		this.hand.map(card => this.deck.returnCardToDeck(card));
+		this.hand = [];
+		// Reset Defaults
+		this.lifebarHeight = '100px';
+		this.lifebarHealth = 'hsl(100, 100%, 50%)';
+		this.lastDrawnCard = { rank: '', suit: '' };
+	}
+
+	// Iterate through hand and check if card values === 21, dispaly blackjack if they do
 	public blackjack() {
 		let handCounter = 0;
 		for( let card of this.hand ) {
