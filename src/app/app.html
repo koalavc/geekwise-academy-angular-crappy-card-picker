@@ -1,4 +1,4 @@
-<div class="ui container main">
+<div class="ui container main"> <!-- Content Start -->
 	<div class="instruction">
 		<h1>Card Pick-a-matic</h1>
 		<p>You just pick cards and put them back.  So fun it doesn't need to be a game.  Tell your friends.</p>
@@ -41,35 +41,37 @@
 		</p>
 	</div>
 
-	<div class="card-environment">
-		<div class="ui segment">
+	<div class="card-environment"> <!-- Card Env Start-->
+
+		<div class="ui segment"> <!-- Card Pick Container Start -->
 			<div class="ui grid">
-				<div class="row">
+				<div class="row card-picker-container">
 					<div class="seven wide middle aligned column">
-						<button class="ui big fluid button">
-							Pick a card!
+						<button
+							class="ui big fluid button"
+							(click)="btnClick()"
+							[ngClass]="btnMsg == 'Pick a Card!' ? 'blue' : 'gray'">
+							{{ btnMsg }}
 						</button>
 					</div>
 					<div class="one wide bottom aligned column">
-						<div class="life-bar"></div>
+						<div class="life-bar" [ngStyle]="{ 'height': lifebarHeight, 'backgroundColor': lifebarHealth }"></div>
 					</div>
 					<div class="seven wide middle aligned column">
-							You last drew: n/a
+						You last drew: {{ lastDrawnCard?.rank }}{{ lastDrawnCard?.suit }}
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> <!-- Card Pick Container End -->
 
-		<div class="ui left floated compact center aligned segment card-in-hand">
-			<button class="ui large button">
-				<h2>card.rank of card.suit</h2>
-				<span class="return">
-					RETURN
-					<i class="reply icon"></i>
-				</span>
+		<h1 class="winnerWinnerChickenDinner" *ngIf="winnerWinnerChickenDinner">💵 💰 🤑 BLACKJACK 🤑 💰 💵</h1>
+
+		<div class="ui left floated compact center aligned segment card-in-hand" *ngFor="let card of hand" > <!-- Cards Start -->
+			<button class="ui large button" (click)="returnCard(card)" [ngClass]="card.suit == '♡' || card.suit == '♢' ? 'red' : 'black'" >
+				<h2>{{ card.rank }} of {{ card.suit }}</h2>
 			</button>
-		</div>
-	</div>
+		</div> <!-- Cards End -->
 
+	</div> <!-- Card Env Start-->
 	<div class="clear"></div>
-</div>
+</div> <!-- Content End -->

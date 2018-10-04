@@ -17,3 +17,30 @@
 .clear {
 	clear: left;
 }
+
+.life-bar {
+	border-radius: 3px;
+	width: 10px;
+}
+
+.card-picker-container {
+	height: 128px;
+}
+
+.winnerWinnerChickenDinner {
+	color: white;
+	text-align: center;
+	background-color: gold;
+	width: 100%;
+	border-radius: 5px;
+}
+
+button.button.black, button.button.red {
+	height: inherit;
+	width: inherit;
+}
+
+.card-in-hand {
+	height: 250px;
+	width: 150px;
+}
